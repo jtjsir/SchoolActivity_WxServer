@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动投稿</title>
+    <link rel="stylesheet" type="text/css" href="/wxServer/mobile/css/index.css">
+</head>
+<body>
+<div class="submit_content">
+    <div class="activity_detail">
+        <form class="activity_type_content" method="post" enctype="multipart/form-data"
+        	action="/wxServer/mobile/activity/add">
+            <input type="text" placeholder="请在这里输入活动标题" class="text_long" name="title">
+            <textarea placeholder="从这里开始写正文" class="text_area" name="content"></textarea>
+            <p>图片</p>
+            <div>
+                <input type="file" name="picFile" value="上传图片" class="button">
+            </div>
+            <input type="text" placeholder="请在这里输入活动地点" class="text_long" name="address">
+            <input type="text" placeholder="活动时间(2016-5-12 9:00:00)" class="text_long" name="time">
+            <div>
+                 <select name="type">
+                       <option>娱乐生活</option>
+                       <option>科技竞赛</option>
+                       <option>学习讲座</option>
+                       <option>社会贡献</option>
+                       <option>就业创业</option>
+                       <option>社团组织</option>
+                 </select>
+                 <input type="checkbox" name="limit"><input value="请填写限制人数" name="people">
+            </div>
+            <div><input type="submit" class="button" value="提交"></div>
+        </form>
+    </div>
+</div>
+<script src="/wxServer/mobile/js/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var message = "$msg" ;
+	if(message!=null){
+		alert(message) ;
+	}
+})
+</script>
+</body>
+</html>

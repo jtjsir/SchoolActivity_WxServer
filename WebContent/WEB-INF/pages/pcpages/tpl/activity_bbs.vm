@@ -1,0 +1,13 @@
+<div ng-controller="activity_bbs.ctrl">
+    <div class="main reply">
+        <h3>发布公告</h3>
+        <div class="activity_type">
+            <div class="activity_type_content">
+                <textarea placeholder="从这里写公告内容" class="text_long" name="content"></textarea>
+            </div>
+            <div>
+                <input type="button" value="发布公告" class="button boardbtn">
+            </div>
+        </div>
+    </div>
+</div>

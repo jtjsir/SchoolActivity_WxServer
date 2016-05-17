@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.WxNewsDao">
+	<insert id="addNews" parameterType="WxNews">
+		insert into wechat_news(title,thumbmediaid,author,content,url,time,status)
+		values(#{title},#{thumb_media_id},#{author},#{content},#{url},#{time},#{status})
+	</insert>
+	
+	<select id="queryCountByStatus" resultType="int">
+		select count(id) from wechat_news where status=#{0}
+	</select>
+	
+	<select id="queryNews" resultType="WxNews">
+		select * from wechat_news where status=#{0}
+	</select>
+	
+	<select id="queryNewsByTitle" resultType="WxNews">
+		select * from wechat_news where title like CONCAT('%',#{0},'%')
+		and status=#{1}
+	</select>
+	
+	<select id="queryOneByTitle" resultType="WxNews">
+		select * from wechat_news where title=#{0}
+	</select>
+	
+	<delete id="deleteOneByTitle">
+		delete from wechat_news where title=#{0}
+	</delete>
+</mapper>

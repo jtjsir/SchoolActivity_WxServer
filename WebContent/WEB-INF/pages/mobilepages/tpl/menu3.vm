@@ -1,0 +1,8 @@
+<div ng-controller="menu3.ctrl">
+    <div class="content" id="menu3">
+        <ul class="mine">
+            <li ng-click="interest()"><a>我的关注</a></li>
+            <li ng-click="reserve()"><a>我的预约</a></li>
+        </ul>
+    </div>
+</div>

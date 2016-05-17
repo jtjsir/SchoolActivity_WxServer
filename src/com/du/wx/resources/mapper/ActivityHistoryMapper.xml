@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.ActivityHistoryDao">
+	<insert id="insertHistory">
+		insert into history_activity_infos(uid,activityid)
+		values(#{uid},#{activityid})
+	</insert>
+	
+	<select id="queryActsByUser" resultType="Activity">
+		select a.id,a.title,a.content,a.url,a.address,a.time,a.type,a.status,a.limit,a.people
+		from history_activity_infos h
+		right join in
+		activity a
+		on(h.activityid=a.id)
+		where 
+		h.uid=#{0}
+	</select>
+</mapper>

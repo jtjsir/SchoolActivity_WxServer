@@ -1,0 +1,298 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color:#555555;
+    font-family:Microsoft Yahei,Tahoma,Arial;
+    background-color: #F0FFFF;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+i{
+    cursor: pointer;
+}
+.menu{
+    width: 100%;
+    clear: both;
+    display: block;
+    height: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.menu li{
+    width: 33.33333%;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid #DCDCDC;
+    font-size: 1em;
+}
+.menu li.active{
+    background-color: #eee;
+}
+.menu>li{
+    float: left;
+    position: relative;
+    background-color: #F0FFFF;
+}
+.menu > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 1px;
+}
+
+.menu > li:hover > ul{
+    display: block;
+    background-color: #ffffff;
+}
+.menu > li:hover > ul>li:hover{
+
+    background-color: #eeeeee;
+}
+.activity-type{
+    border: 1px solid #dddddd;
+    border-top: none;
+    background-color: #F0FFFF;
+}
+.activity-type li{
+    width:100%;
+    padding: 5px;
+    text-align: center;
+    float: left;
+    font-size: 1em;
+    border: none;
+}
+#main{
+    margin-top: 50px;
+    z-index: 0;
+}
+.content{
+    padding: 10px;
+    z-index: 0;
+}
+.search{
+    width:100%;
+    display: inline-block;
+    margin: 20px 0;
+}
+.search .search-text{
+    padding: 5px;
+    border: 1px solid #dddddd;
+    color: inherit;
+    width: 60%;
+}
+.button{
+    padding: 5px 10px;
+    background-color: #4682B4;
+    color: #ffffff;
+    margin-left: -1px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+.activity{
+    display: block;
+}
+.active-content{
+    position: absolute;
+}
+.active-condition{
+    position: relative;
+    top: 2em;
+    font-size: 1.5em;
+    float: right;
+    padding-right: 1em;
+}
+.activity li{
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.activity li img{
+    width: 100%;
+    cursor: pointer;
+}
+.activity-tittle{
+    padding: 20px 5px;
+    display: inline-block;
+    width: 95%;
+    line-height: 24px;
+}
+.detail{
+    font-size: .5em;
+    padding-left: 10px;
+}
+.detail i{
+    padding-right: 10px;
+}
+.follow{
+    font-size: .5em;
+}
+.red{
+    color:#EA0000;
+}
+.mine{
+    display: block;
+}
+.mine li{
+    padding:5px 10px;
+    background-color: #ffffff;
+    border:2px solid #dddddd;
+    box-sizing: border-box;
+    color: #272727;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 3px;
+    text-align: center;
+}
+.my-interest{
+
+}
+.my-interest h4{
+    text-align: center;
+    padding: 10px;
+}
+.interest{
+    display: block;
+}
+.interest li{
+    text-align: left;
+    border:1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color:#6C6C6C;
+    width: 90%;
+    line-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+.my-reserve{
+    display: block;
+}
+.icon{
+    padding:0 10px;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+}
+.reserve-condition{
+    padding-left: 10px;
+    display: inline-block;
+}
+.my-reserve li{
+    width: 100%;
+    line-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border:1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color:#6C6C6C;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+.my-reserve li a{
+    display: inline-block;
+}
+.reserve-detail{
+    padding-top: 20px;
+}
+.reserve-detail img{
+    width: 100%;
+}
+.yellow{
+    background-color: greenyellow;
+}
+.green{
+    background-color: limegreen;
+}
+.user-detail{
+    display: block;
+    margin-top: 20px;
+}
+.user-detail li{
+    line-height: 24px;
+    color:#6C6C6C;
+    margin-bottom: 10px;
+}
+.user-detail li input{
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 50%;
+}
+.submit{
+    padding-left:70%;
+    padding-top: 20px;
+}
+.activity-detail{
+    padding: 10px;
+    font-size: 1em;
+}
+.activity-detail p{
+    text-indent: 2em;
+}
+.submit_content{
+    margin: 20px;
+}
+.submit_block{
+    line-height: 30px;
+}
+.submit_block span{
+    width: 20%;
+    padding-right: 10px;
+    display: block;
+}
+.activity_type_content input{
+    margin-bottom: 20px;
+}
+.text{
+    width: 60%;
+    height: 15px;
+    padding: 5px;
+}
+textarea{
+    width: 60%;
+    height: 80px;
+    padding: 5px;
+}
+
+.text_long{
+    width:80%;
+    padding: 5px;
+    border: 1px solid #eeeeee;
+}
+.text_area{
+    width: 80%;
+    height: 60px;
+    padding: 5px;
+
+}
+.submit_img{
+    width: 160px;
+    height: 160px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    margin: 10px 0;
+}
+.submit_img a{
+    line-height: 160px;
+    padding: 30px;
+}

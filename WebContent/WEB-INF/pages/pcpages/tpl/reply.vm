@@ -1,0 +1,14 @@
+<div ng-controller="reply.ctrl">
+    <div class="main reply">
+        <h3>消息回复</h3>
+        <div class="activity_type">
+            <h5>文字消息编辑</h5>
+            <div class="activity_type_content">
+                <textarea placeholder="从这里开始回复" class="text_long"></textarea>
+            </div>
+            <div>
+                <input type="button" value="发送回复" class="button replybtn">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.LetterInfoDao">
+	<insert id="addLetterInfo" parameterType="LetterInfo">
+		insert letter_info(openid,title,content,url,address,time,type,status,letterlimit,people)
+		values(#{openid},#{title},#{content},#{url},#{address},#{time},#{type},#{status},#{letterlimit},#{people})
+	</insert>
+	
+	<delete id="deleteInfo">
+		delete from letter_info where title=#{0}
+	</delete>
+	
+	<select id="queryAll" resultType="LetterInfo">
+		select * from letter_info
+	</select>
+	
+	<select id="querySomeByTitle" resultType="LetterInfo">
+		select * from letter_info where title like CONCAT('%',#{0},'%')
+	</select>
+	
+	<select id="queryLetterByTitle" resultType="LetterInfo">
+		select * from letter_info where title=#{0}
+	</select>
+</mapper>

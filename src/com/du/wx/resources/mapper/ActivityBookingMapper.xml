@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.ActivityBookingDao">
+	<insert id="addBookingInfo">
+		insert into booking_activity_infos(uid,activityid,isbooked)
+		values(#{uid},#{activityid},#{isbooked})
+	</insert>
+
+	<select id="queryCountBookingByAct" resultType="int">
+		select count(*) from booking_activity_infos
+		where
+		activityid=#{0}
+	</select>
+	
+	<select id="queryCountBookingByUser" resultType="int">
+		select count(*) from booking_activity_infos
+		where
+		uid=#{0}
+	</select>
+	
+	<select id="queryUsersByAct" resultType="BaseUser">
+		select a.uid,a.openid,a.nickname,a.phone,a.email,a.address
+		from booking_activity_infos b 
+		right join 
+		base_user a on(b.uid=a.uid)
+		where b.activityid=#{0} and b.isbooked=1
+	</select>
+	
+	<select id="queryActByUser" resultType="Activity">
+		select a.id,a.title,a.content,a.url,a.address,a.time,a.type,a.status,a.limit,a.people
+		from activity a
+		left join 
+		booking_activity_infos b
+		on(a.id=b.activityid)
+		where b.uid=#{0} and b.isbooked=1
+	</select>
+	
+	<select id="queryActBooking" resultType="ActivityBooking">
+		select * from booking_activity_infos
+		where uid=#{0} and activityid=#{1}
+	</select>
+	
+	<update id="updateBooking">
+		update booking_activity_infos
+		set
+		isbooked=#{2}
+		where uid=#{0} and activityid=#{1}
+	</update>
+</mapper>

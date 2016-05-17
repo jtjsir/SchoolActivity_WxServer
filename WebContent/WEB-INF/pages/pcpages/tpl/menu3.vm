@@ -1,0 +1,60 @@
+<div ng-controller="menu3.ctrl">
+    <div class="main content3">
+        <h3>活动群发</h3>
+        <div class="activity_obj">
+            <span>群发对象:</span>
+            <select>
+                <option>全部用户</option>
+            </select>
+            <span>性别:</span>
+            <select>
+                <option>全部</option>
+            </select>
+            <span>群发地区:</span>
+            <select>
+                <option>中国</option>
+            </select>
+        </div>
+        <form class="activity_type" method="post" enctype="multipart/form-data">
+            <h5>图文消息回复</h5>
+            <div class="activity_type_content">
+                <input type="text" placeholder="请在这里输入活动标题" class="text" name="title">
+                <input type="text" placeholder="请在这里输入作者" class="text_sm" name="author">
+                <textarea placeholder="从这里开始写正文" class="text_long" name="content"></textarea>
+                <div><span style="font-size:13px;">活动类别: </span>
+                	<select name="type">
+                      	 <option>娱乐生活</option>
+                      	 <option>科技竞赛</option>
+                      	 <option>学习讲座</option>
+                       	 <option>社会贡献</option>
+                      	 <option>就业创业</option>
+                      	 <option>社团组织</option>
+                	 </select>
+                 </div>
+                <p>图片</p>
+                <div>
+                    <input type="file" value="本地上传" class="button_gray" name="imgFile">
+                </div>
+                <div>
+                    <span>（ 第一个图片显示在封面中 ）</span>
+                </div>
+                <input type="text" placeholder="请在这里输入活动地点" class="text_sm" name="address">
+                <input type="text" placeholder="活动时间格式如：（2016-5-12 9:00:00）" class="text_sm" name="time">
+                <input type="checkbox" name="limit"><input value="请填写限制人数" name="people">
+            </div>
+            <div class="savebtn">
+                <input type="button" value="保存" class="button_gray">
+                <input type="button" value="保存并群发" class="button">
+            </div>
+        </form>
+
+    </div>
+</div>
+<script type="text/script">
+	$(function(){
+	var message = "$msg" ;
+	if(message!=null){
+		alert(message) ;
+	}
+})
+</script>

@@ -1,0 +1,26 @@
+<div ng-controller="reserve_detail.ctrl">
+    <div class="content">
+        <h4>预约详情</h4>
+        <div class="reserve-detail">
+            <<div class="active-condition red">即将开始</div>
+            <img src="/wxServer/mobile/img/activity01.jpg">
+            <div>
+                <div class="activity-tittle">
+                    <h4>《杭州历史》杭州话剧</h4>
+                    <span class="detail"><i class="fa fa-calendar"></i>    2016-03-21</span><br>
+                        <span class="detail">
+                            <i class="fa fa-map-marker"></i>    浙江省杭州市滨江区秋溢路天和
+                        </span>
+                </div>
+                <div class="follow red">
+                    <span><i class="fa fa-heart-o"></i>120</span>
+                </div>
+            </div>
+            <div>
+                <button class="button" ng-click="user_detail()">我要预约</button>
+                <button class="button yellow">审核中</button>
+                <button class="button green">预约成功</button>
+            </div>
+        </div>
+    </div>
+</div>

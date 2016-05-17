@@ -1,0 +1,16 @@
+<div ng-controller="menu1.ctrl">
+    <div class="content" >
+        <div class="search">
+            <form>
+                <input type="text" class="search-text" placeholder="请要查询输入活动名称">
+                <input type="submit" class="button" name="button" value="查询活动">
+            </form>
+        </div>
+
+        <div class="activity-content" id="menu1">
+            <ul class="activity">
+            </ul>
+        </div>
+    </div>
+
+</div>

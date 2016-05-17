@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册校园活动助手</title>
+    <link rel="stylesheet" type="text/css" href="/wxServer/pc/css/index.css">
+</head>
+<body>
+<div class="login">
+    <h3>校园活动助手后台登录页</h3>
+    <form class="login_block">
+    	#if(${error})
+    		<label style="font-size:10px;color:red;">请输入正确的帐号密码</label>
+    	#end
+        <input type="text" placeholder="用户名" name="username">
+        <input type="password" placeholder="密码" name="password">
+        <div class="login_button">
+            <button class="button">登录</button>
+            <a>忘记密码？</a> <!-- 直接弹出“请联系管理员” -->
+        </div>
+    </form>
+</div>
+<script src="/wxServer/pc/js/jquery-1.11.3.min.js"></script>
+<script src="/wxServer/pc/js-ctrl/login.js"></script>
+</body>
+</html>

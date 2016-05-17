@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="meApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	#set($superpath = $request.getScheme() + "://" + $request.getServerName() + ":" +$request.getServerPort() + $request.getContextPath())
+    <link rel="stylesheet" type="text/css" href="/wxServer/pc/css/index.css">
+    <link rel="stylesheet" href="/wxServer/pc/font-icon/css/font-awesome.min.css">
+
+    <script src="/wxServer/pc/js/jquery-1.11.3.min.js"></script>
+    <script src="/wxServer/pc/js/angular1.2.9.min.js"></script>
+    <script src="/wxServer/pc/js/me-1.0.js"></script>
+    <script src="/wxServer/pc/js/Config.js"></script>
+    <script src="/wxServer/pc/js/Util.js"></script>
+
+    <script src="/wxServer/pc/js-ctrl/index.js"></script>
+    <script src="/wxServer/pc/js-ctrl/activity_detail.js"></script>
+    <script src="/wxServer/pc/js-ctrl/activity_history.js"></script>
+    <script src="/wxServer/pc/js-ctrl/activity_bbs.js"></script>
+    <script src="/wxServer/pc/js-ctrl/menu1.js"></script>
+    <script src="/wxServer/pc/js-ctrl/menu2.js"></script>
+    <script src="/wxServer/pc/js-ctrl/menu3.js"></script>
+    <script src="/wxServer/pc/js-ctrl/menu4.js"></script>
+    <script src="/wxServer/pc/js-ctrl/menu5.js"></script>
+    <script src="/wxServer/pc/js-ctrl/ship1.js"></script>
+    <script src="/wxServer/pc/js-ctrl/ship2.js"></script>
+    <script src="/wxServer/pc/js-ctrl/ship3.js"></script>
+	<script src="/wxServer/pc/js-ctrl/reply.js"></script>
+	
+    <title>校园活动助手PC后台</title>
+    <script>
+        me.config({
+            container: "#main",
+            main: "",
+            path: "/wxServer/pc/index/tpl/",
+            debug:true,
+        });
+    </script>
+</head>
+<body ng-controller="me.ctrl">
+<div ng-controller="index.ctrl">
+    <div class="head">
+        <div class="head-tittle">
+            <span>校园活动助手PC后台</span>
+        </div>
+        <div class="head-info">
+            <a class="user-name">${user.name}</a>
+            <a class="out" href="${superpath}/pc/admin/user/logout">退出</a>
+        </div>
+    </div>
+    <div id="menu">
+    	<input type="hidden" value="${isSuper}"id="superValue" />
+        <ul class="menu">
+            <li ng-click="changeMenu(0)" ng-class="{active:menuIndex==0}" id="admin">
+                <a>管理员管理</a>
+            </li>
+            <li ng-click="changeMenu(1)" ng-class="{active:menuIndex==1}" id="user">
+                <a>用户管理</a>
+            </li>
+            <li ng-click="changeMenu(2)" ng-class="{active:menuIndex==2}" id="actsend">
+                <a>活动群发</a>
+            </li>
+            <li ng-click="changeMenu(3)" ng-class="{active:menuIndex==3}" id="actmanage">
+                <a>活动管理</a>
+            </li>
+            <li ng-click="changeMenu(4)" ng-class="{active:menuIndex==4}" id="msgmanage">
+                <a>消息管理</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main"></div>
+</div>
+<script>
+    me.run('meApp', []);
+</script>
+</body>
+</html>

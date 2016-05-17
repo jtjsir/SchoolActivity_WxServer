@@ -1,0 +1,26 @@
+<div ng-controller="activity_detail.ctrl">
+    <div class="main activity_detail">
+        <form class="activity_type" method="post" enctype="multipart/form-data">
+            <h5>图文消息编辑</h5>
+            <div class="activity_type_content">
+                <input type="text" placeholder="请在这里输入活动标题" class="text" name="title">
+                <input type="text" placeholder="请在这里输入作者" class="text_sm" name="author">
+                <textarea placeholder="从这里开始写正文" class="text_long" name="content"></textarea>
+                <p>图片</p>
+                <div>
+                    <input type="file" value="本地上传" class="button_gray" name="imgFile">
+                </div>
+                <div>
+                    <span>（ 第一个图片显示在封面中）</span>
+                </div>
+                <input type="text" placeholder="请在这里输入活动地点" class="text_sm" name="address">
+                <input type="text" placeholder="活动时间格式如：（2016-5-12 9:00:00）" class="text_sm" name="time">
+            </div>
+            <div class="detailsavebtn">
+                <input type="button" value="保存" class="button_gray">
+                <input type="button" value="保存并群发" class="button">
+                <input type="button" value="删除" class="button_delete">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.ActivityDao">
+	<insert id="addActivity" parameterType="Activity">
+		insert into activity(title,content,url,address,time,type,status,actlimit,people)
+		values(#{title},#{content},#{url},#{address},#{time},#{type},#{status},#{actlimit},#{people})
+	</insert>
+	
+	<select id="queryAct" resultType="Activity">
+		select * from activity
+		where 
+		title=#{0}
+	</select>
+	
+	<select id="queryAllActs" resultType="Activity">
+		select * from activity
+	</select>
+	
+	<select id="queryActByType" resultType="Activity">
+		select * from activity
+		where type=#{0}
+	</select>
+</mapper>

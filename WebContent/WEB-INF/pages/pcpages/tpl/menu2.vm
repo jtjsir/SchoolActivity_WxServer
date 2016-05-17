@@ -1,0 +1,15 @@
+<div ng-controller="menu2.ctrl">
+    <div class="main content2">
+        <h3>用户管理</h3>
+        <div class="content5_head">
+            <a>已关注</a>
+        </div>
+        <div class="border_bottom"></div>
+        <div class="search">
+            <input type="text" class="text" placeholder="在这里输入要查找的用户">
+            <input type="button" class="button" value="搜索">
+        </div>
+        <ul class="message_list">
+        </ul>
+    </div>
+</div>

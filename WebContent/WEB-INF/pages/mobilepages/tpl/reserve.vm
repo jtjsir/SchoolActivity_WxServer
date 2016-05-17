@@ -1,0 +1,8 @@
+<div ng-controller="reserve.ctrl">
+    <div class="my-interest">
+        <h4>我的预约</h4>
+        <ul class="my-reserve">
+        </ul>
+    </div>
+</div>
+

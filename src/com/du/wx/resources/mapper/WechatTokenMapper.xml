@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.WechatTokenDao">
+	<select id="queryToken" resultType="WxToken">
+		select access_token as accessToken,
+				expires_in as expiresIn,
+				modified_time as modifiedTime
+		 from wechat_token where id=1
+	</select>
+	<insert id="insertToken" parameterType="WxToken">
+		insert wechat_token(access_token,expires_in,modified_time) values(#{accessToken},#{expiresIn},#{modifiedTime})
+	</insert>
+	<update id="updateToken" parameterType="WxToken">
+		update wechat_token
+		set
+		access_token=#{accessToken},
+		expires_in=#{expiresIn},
+		modified_time=#{modifiedTime}
+		where id=1
+	</update>
+</mapper>

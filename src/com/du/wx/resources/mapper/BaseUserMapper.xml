@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.BaseUserDao">
+	<select id="queryUserInfoById" resultType="BaseUser">
+		select * from base_user where openid=#{0}
+	</select>
+	
+	<select id="queryUsersByNickname" resultType="BaseUser">
+		select * from base_user where nickname like CONCAT('%',#{0},'%')
+	</select>
+	
+	<select id="queryUsers" resultType="BaseUser">
+		select * from base_user
+	</select>
+	
+	<insert id="insertUser" parameterType="BaseUser">
+		insert into base_user(openid,nickname,headimgurl,phone,address)
+		values(#{openid},#{nickname},#{headimgurl},#{phone},#{address})
+	</insert>
+	
+	<update id="updateUser" parameterType="BaseUser">
+		update base_user
+		set
+		nickname=#{nickname},
+		phone=#{phone},
+		address=#{address}
+		where openid=#{openid}
+	</update>
+	
+	<delete id="deleteUser">
+		delete from base_user where openid=#{0}
+	</delete>
+</mapper>

@@ -1,0 +1,12 @@
+<div ng-controller="ship1.ctrl">
+    <div class="main">
+        <h3>活动管理/已发送活动</h3>
+        <div class="border_bottom"></div>
+        <div class="search">
+            <input type="text" class="text" placeholder="在这里输入要查找的活动">
+            <input type="button" class="button ship1searchbtn" value="搜索">
+        </div>
+        <ul class="activity_simple">
+        </ul>
+    </div>
+</div>

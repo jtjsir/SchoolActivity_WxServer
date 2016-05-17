@@ -1,0 +1,7 @@
+<div ng-controller="activity_detail.ctrl">
+    <div class="content">
+        <h4>预约详情</h4>
+        <div class="reserve-detail">
+        </div>
+    </div>
+</div>

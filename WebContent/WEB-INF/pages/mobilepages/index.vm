@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="meApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <link rel="stylesheet" type="text/css" href="/wxServer/mobile/css/index.css">
+    <link rel="stylesheet" href="/wxServer/mobile/font-icon/css/font-awesome.min.css">
+
+    <script src="/wxServer/mobile/js/jquery-1.11.3.min.js"></script>
+    <script src="/wxServer/mobile/js/angular1.2.9.min.js"></script>
+    <script src="/wxServer/mobile/js/me-1.0.js"></script>
+    <script src="/wxServer/mobile/js/Config.js"></script>
+    <script src="/wxServer/mobile/js/Util.js"></script>
+
+    <script src="/wxServer/mobile/js-ctrl/index.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/menu1.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/menu2.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/menu3.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/activity_detail.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/interest.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/reserve.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/reserve_detail.js"></script>
+    <script src="/wxServer/mobile/js-ctrl/user-detail.js"></script>
+
+    <title>所有活动</title>
+    <script>
+        me.config({
+            container: "#main",
+            main: "",
+            path: "/wxServer/mobile/index/tpl/",
+            debug:true,
+        });
+    </script>
+</head>
+<body ng-controller="me.ctrl">
+<div ng-controller="index.ctrl">
+    <ul class="menu">
+        <li ng-click="changeMenu(0)" ng-class="{active:menuIndex==0}">
+            <a>近期活动</a>
+            <ul class="activity-type">
+                <li id="type1"><a>科技竞赛</a></li>
+                <li id="type2"><a>娱乐生活</a></li>
+                <li id="type3"><a>学习讲座</a></li>
+                <li id="type4"><a>就业创业</a></li>
+                <li id="type5"><a>社会贡献</a></li>
+                <li id="type6"><a>社团组织</a></li>
+            </ul>
+        </li>
+        <li ng-click="changeMenu(1)" ng-class="{active:menuIndex==1}"><a>活动预告</a></li>
+        <li ng-click="changeMenu(2)" ng-class="{active:menuIndex==2}"><a>我的活动</a></li>
+    </ul>
+
+    <div id="main"></div>
+
+</div>
+<script>
+    me.run('meApp', []);
+</script>
+</body>
+</html>

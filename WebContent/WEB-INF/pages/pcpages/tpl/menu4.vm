@@ -1,0 +1,15 @@
+<div ng-controller="menu4.ctrl">
+    <div class="main content4">
+        <h3>活动管理</h3>
+        <div class="content5_head">
+            <a ng-click="ship1()" class="alreadySend">已发送活动（共<span>0</span>条）</a>
+            <a ng-click="ship2()" class="acceptLetter">收到投稿消息（共<span>0</span>条）</a>
+            <a ng-click="ship3()" class="readySend">活动素材（共<span>0</span>条）</a>
+        </div>
+
+        <div class="search">
+            <input type="text" class="text" placeholder="在这里输入要查找的活动">
+            <input type="button" class="button" value="搜索">
+        </div>
+    </div>
+</div>

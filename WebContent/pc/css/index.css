@@ -1,0 +1,327 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color:#555555;
+    font-family:Microsoft Yahei,Tahoma,Arial;
+    background-color: #F0FFFF;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.head{
+    height: 40px;
+    background-color: #4682B4;
+    padding: 15px;
+    color: #ffffff;
+}
+.head-tittle{
+    font-size: 24px;
+    letter-spacing: 5px;
+    width: 300px;
+    padding-top: 5px;
+    float: left;
+}
+.head-info{
+    float: right;
+    margin-right: 50px;
+    padding: 10px;
+}
+.user-name{
+    margin-right: 10px;
+}
+.menu{
+    width: 20%;
+    height: 560px;
+    border: 1px solid #dddddd;
+    float: left;
+}
+.menu li{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    border-bottom: 1px solid #DCDCDC;
+    font-size: 1em;
+    height: 35px;
+    background-color: #4684B5;
+    color: #fff;
+}
+.menu li.active{
+    background-color: #6699CC;
+}
+.menu>li{
+    float: left;
+    position: relative;
+}
+.menu > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 1px;
+}
+
+.menu > li:hover > ul{
+    display: block;
+    background-color: #ffffff;
+}
+.menu > li:hover > ul>li:hover{
+
+    background-color: #eeeeee;
+}
+#main{
+    z-index: 0;
+}
+.content{
+    padding: 10px;
+    z-index: 0;
+}
+
+.button{
+    padding: 5px 15px;
+    background-color: #4682B4;
+    color: #ffffff;
+    margin-left: -1px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.button_yellow{
+    padding: 5px 15px;
+    background-color: greenyellow;
+    color: #ffffff;
+    margin-left: -1px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.button_delete{
+    padding: 5px 15px;
+    background-color:orangered;
+    color:#ffffff;
+    margin-left: -1px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.login{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.login h3{
+    text-align: center;
+    margin: 10px;
+}
+.login_block{
+    text-align: center;
+}
+.login_block input{
+    width: 200px;
+    height: 20px;
+    padding: 2px 5px;
+    border: 1px solid #dddddd;
+    margin: 10px 0 ;
+}
+.login_button{
+    text-align: left;
+    padding-left: 40px;
+}
+
+.main{
+    width: 75%;
+    margin:10px;
+    float: right;
+    line-height: 35px;
+}
+.activity_obj{
+    margin: 10px 0;
+}
+.activity_obj span{
+    padding: 0 30px;
+}
+.text{
+    width: 360px;
+    height: 30px;
+    padding: 2px 5px;
+    border: 1px solid #eeeeee;
+}
+.text_sm{
+    width: 230px;
+    height: 30px;
+    padding: 2px 5px;
+    border: 1px solid #eeeeee;
+}
+.text_long{
+    width: 607px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #eeeeee;
+}
+.text_middle{
+    width: 607px;
+    height: 80px;
+    padding: 5px;
+    border: 1px solid #eeeeee;
+}
+.button_gray{
+    padding: 5px 15px;
+    background-color: #ffffff;
+    color:#555555;
+    margin-left: -1px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.activity_type{
+    width: 800px;
+}
+.activity_type h5{
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+.activity_type_content{
+    border: 1px solid #dddddd;
+    padding:5px;
+    display: block;
+}
+.activity_type_content input{
+    margin: 10px 0;
+}
+.choose_text{
+    color: dimgray;
+    font-size: 12px;
+    margin-left: 15px;
+}
+.content5_head{
+    padding-top: 5px;
+}
+.content5_head a{
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-bottom: 2px solid red;
+}
+.border_bottom{
+    border-bottom: 1px solid #555555;
+    padding: 5px;
+}
+.message_list{
+    margin: 10px 0;
+}
+.message_list li{
+    border: 1px solid #dddddd;
+    padding: 10px;
+    width: 860px;
+    height: 50px;
+    margin: 10px 0;
+}
+.message_list li img{
+    width: 48px;
+    height: 48px;
+    background-color: #eeeeee;
+    float: left;
+    margin-right: 15px;
+}
+.message_list_text{
+    width:780px;
+    float: left;
+    line-height: 50px;
+}
+.td{
+    padding: 0 10px;
+}
+.user-name{
+    width: 250px ;
+}
+.message_content{
+    width:600px;
+    text-align: center;
+}
+.message_time{
+    width: 180px;
+    font-size:12px;
+}
+.collection{
+    width: 20px;
+    padding:0 10px;
+    float: right;
+    cursor: pointer;
+}
+.search{
+    margin: 10px 0;
+}
+.note{
+    padding: 0 10px;
+    float: right;
+}
+.activity_simple{
+    width: auto;
+}
+.activity_simple li{
+    width: 290px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 25px;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+.activity_simple li a img{
+    width: 265px;
+    height: 165px;
+    background-color: #eeeeee;
+}
+.activity_time{
+    color: dimgrey;
+    font-size: 12px;
+}
+.activity_abs{
+    font-size: 12px;
+    color: dimgrey;
+    line-height: 20px;
+}
+.activity_img_show li{
+    display: inline-block;
+    margin:10px 20px 10px 0;
+}
+.activity_img_show li img{
+    width: 280px;
+    height: 200px;
+}
+.search_right{
+    display: inline-block;
+    margin-left: 20px;
+}
+.manage_list{
+    width: 800px;
+    margin: 20px 0;
+    border: 1px solid #dddddd;
+    text-align: center;
+    background-color: #ffffff;
+}
+.manage_list th{
+    background-color: #4684B5;
+    color: #ffffff;
+}
+.delete{
+    color:red;
+}
+.revise{
+    color: #4682B4;
+}

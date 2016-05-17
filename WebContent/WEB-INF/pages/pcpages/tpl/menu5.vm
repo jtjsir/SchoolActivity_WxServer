@@ -1,0 +1,16 @@
+<div ng-controller="menu5.ctrl">
+    <div class="main content5">
+        <h3>消息管理</h3>
+        <div class="content5_head">
+            <a class="allmsg">全部消息</a>
+            <a class="storedmsg">已收藏消息</a>
+        </div>
+        <div class="border_bottom"></div>
+        <select class="dayselect">
+            <option value="0">今天</option>
+            <option value="5">最近五天</option>
+        </select>
+        <ul class="message_list">
+        </ul>
+    </div>
+</div>

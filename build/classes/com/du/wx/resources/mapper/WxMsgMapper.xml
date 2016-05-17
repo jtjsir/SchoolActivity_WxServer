@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.du.wx.mapper.joggle.WxMsgDao">
+	<insert id="insertMsg" parameterType="WxMsg">
+		insert into wechat_msg(openid,headimgurl,nickname,msg,time,isstored)
+		values(#{openid},#{headimgurl},#{nickname},#{msg},#{time},#{isstored})
+	</insert>
+	
+	<delete id="deleteMsgById">
+		delete from wechat_msg where id=#{0}
+	</delete>
+	
+	<select id="queryAllMsg" resultType="WxMsg">
+		select * from wechat_msg 
+	</select>
+	
+	<select id="querySomeMsgByStored" resultType="WxMsg">
+		select * from wechat_msg where isstored=#{0}
+	</select>
+	
+	<update id="updateIsStored">
+		update wechat_msg
+		set
+		isstored=#{1}
+		where
+		id=#{0}
+	</update>
+</mapper>

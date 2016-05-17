@@ -1,0 +1,8 @@
+<div ng-controller="menu2.ctrl">
+    <div class="activity-content" id="menu2">
+        <ul class="activity">
+        </ul>
+    </div>
+
+
+</div>

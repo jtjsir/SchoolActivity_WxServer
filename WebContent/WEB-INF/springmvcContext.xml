@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"  
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+       http://www.springframework.org/schema/mvc  
+       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd  
+       http://www.springframework.org/schema/context   
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<context:annotation-config />
+	<context:component-scan base-package="com.du.wx.controller" /> 
+	<mvc:annotation-driven />
+	
+	<!-- 配置资源的外部访问 -->
+	<mvc:resources location="/mobile/" mapping="/mobile/**"/>      
+	<mvc:resources location="/pc/" mapping="/pc/**"/>
+	
+	<!-- <bean id="viewResolver"
+                class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+    p:prefix="/WEB-INF/pages/"
+    p:suffix=".jsp" /> -->
+    
+    <!-- velocity模板引擎 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    	<property name="contentType" value="text/html;charset=UTF-8"/>
+    	<property name="suffix" value=".vm" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<!-- 指定tools.xml供前台使用request对象 -->
+		<property name="toolboxConfigLocation" value="/WEB-INF/tools.xml" />
+    </bean>
+    
+    <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath">
+            <value>WEB-INF/pages/</value>
+        </property>
+        <property name="velocityProperties">
+          <props>
+            <prop key="input.encoding">UTF-8</prop>
+            <prop key="output.encoding">UTF-8</prop>
+            <prop key="contentType">text/html;charset=UTF-8</prop>
+          </props>
+        </property>
+    </bean>
+    
+    <!-- 上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="10485760"/>
+    </bean>
+    
+    <!-- 拦截器设置 -->
+    <mvc:interceptors>
+    	<mvc:interceptor>
+    		<mvc:mapping path="/**"/>
+			  <!-- 静态资源不拦截 -->  		
+    		<mvc:exclude-mapping path="/mobile/**"/>
+    		<mvc:exclude-mapping path="/pc/**"/>
+    		<!-- 主页不拦截 -->
+    		
+    		<!-- 特殊user资源获取不拦截 -->
+    		<bean class="com.du.wx.interceptor.UserInterceptor" />
+    	</mvc:interceptor>
+    </mvc:interceptors>
+</beans>

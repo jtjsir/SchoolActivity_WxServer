@@ -1,0 +1,9 @@
+<div ng-controller="interest.ctrl">
+    <div class="my-interest">
+        <h4>我的关注</h4>
+
+        <ul class="interest">
+        </ul>
+
+    </div>
+</div>
